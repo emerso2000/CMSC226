@@ -4,15 +4,15 @@
 #include "bookinfo.h"
 using namespace std;
 
-extern const int arrraySize = 15;
-extern string bookTitle[arrraySize];
-extern string ibsn[arrraySize];
-extern string author[arrraySize];
-extern string publisher[arrraySize];
-extern string dateAdded[arrraySize];
-extern int qtyOnHand[arrraySize];
-extern double wholesale[arrraySize];
-extern double retail[arrraySize];
+extern const int arraySize = 15;
+extern string bookTitle[arraySize];
+extern string ibsn[arraySize];
+extern string author[arraySize];
+extern string publisher[arraySize];
+extern string dateAdded[arraySize];
+extern int qtyOnHand[arraySize];
+extern double wholesale[arraySize];
+extern double retail[arraySize];
 //extern
 
 //Ask teacher if i can change to int because of return 0;
@@ -24,7 +24,7 @@ void lookUpBook() {
     cin.ignore();
     getline(cin, bookName);
 
-    for (int i = 0; i < arrraySize; i++) {
+    for (int i = 0; i < arraySize; i++) {
         if (bookTitle[i] == bookName) {
             bookInfo(ibsn[i], bookTitle[i], author[i], publisher[i], dateAdded[i], qtyOnHand[i], wholesale[i], retail[i]);            
             break;
@@ -47,7 +47,7 @@ void addBook() {
     double wholesale_price;
     double retail_price;
 
-    for (int i = 0; i < arrraySize; i++) {
+    for (int i = 0; i < arraySize; i++) {
         if (bookTitle[i].length() == 0) {
             cout << "\nBook title: ";
             cin.ignore();
@@ -59,11 +59,13 @@ void addBook() {
             ibsn[i] = ibsn_num;
 
             cout << "\nAuthor's Name: ";
-            cin >> author_name;
+            cin.ignore();
+            getline(cin, author_name);
             author[i] = author_name;
 
             cout << "\nPublisher's Name: ";
-            cin >> publisher_name;
+            cin.ignore();
+            getline(cin, publisher_name);
             publisher[i] = publisher_name;
 
             cout << "\nThe date the book was added to inventory: ";
@@ -108,7 +110,7 @@ void editBook() {
     cin.ignore();
     getline(cin, bookName);
 
-    for (int i = 0; i < arrraySize; i++) {
+    for (int i = 0; i < arraySize; i++) {
         if (bookName == bookTitle[i]) {
             cout << "\nWhat fields do you want to change?";
             cout << "\n1. Book title";
@@ -187,7 +189,7 @@ void deleteBook() {
     cin.ignore();
     getline(cin, bookName);
 
-    for (int i = 0; i < arrraySize; i++) {
+    for (int i = 0; i < arraySize; i++) {
         if (bookName == bookTitle[i]) {
             bookTitle[i] = "";
             ibsn[i] = "";
