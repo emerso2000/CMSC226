@@ -16,15 +16,15 @@
 
 using namespace std;
 
-const int arrraySize = 15;
-string bookTitle[arrraySize];
-string ibsn[arrraySize];
-string author[arrraySize];
-string publisher[arrraySize];
-string dateAdded[arrraySize];
-int qtyOnHand[arrraySize];
-double wholesale[arrraySize];
-double retail[arrraySize];
+const int arraySize = 15;
+string bookTitle[arraySize];
+string ibsn[arraySize];
+string author[arraySize];
+string publisher[arraySize];
+string dateAdded[arraySize];
+int qtyOnHand[arraySize];
+double wholesale[arraySize];
+double retail[arraySize];
 
 int main()
 {
